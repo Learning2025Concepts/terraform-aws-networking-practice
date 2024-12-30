@@ -28,14 +28,21 @@ module "networking" {
       azs        = "us-east-1a"
       public     = true
     }
-    
+
+    subnet_1 = {
+      cidr_block = "10.0.1.0/24"
+      azs        = "us-east-1c"
+      public     =  true
+    }
+
     private = {
       cidr_block = "10.0.100.0/24"
       azs        = "us-east-1b"
     }
 
   }
-  
+
+
   }
 
 
