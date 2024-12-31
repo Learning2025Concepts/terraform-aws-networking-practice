@@ -1,6 +1,6 @@
-module "<module name>" {
+module "networking" {
 
-  source = ""
+  source = "path/to/module"
   # define the source module as modules/networking in this case
 
   vpc_config = {
@@ -8,7 +8,7 @@ module "<module name>" {
     cidr_block = "10.0.0.0/16"
     # define the value for the cidr_blocks in this case
 
-    name = "<your-vpc-name>"
+    name = "main"
     # define the name args inside the object
 
   }
@@ -19,12 +19,6 @@ module "<module name>" {
       cidr_block = "10.0.0.0/24"
       azs        = "us-east-1a"
       public     = true
-    }
-
-    subnet_1 = {
-      cidr_block = "10.0.1.0/24"
-      azs        = "us-east-1c"
-      public     =  true
     }
 
     private = {
