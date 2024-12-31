@@ -1,6 +1,8 @@
 #variable block with the name as vpc_config which is of object type in this case
 variable "vpc_config" {
 
+  description = "The configuration for the VPC as list(object) with valid cidr_block and name"
+
   # the variable type in this case will be of type object rather than the primitive type such as string
   type = object({
 
@@ -32,7 +34,7 @@ variable "subnet_config" {
   type = map(object({
 
     cidr_block = string
-    # define the subnet cidr_block as the list(subnet) where each will be of type string
+    # define the subnet ci`dr_block as the list(subnet) where each will be of type string
     azs = string
     # name of the variable azs as the list(subnet) where each will be of type string
 
@@ -41,20 +43,7 @@ variable "subnet_config" {
 
   }))
 
-  # default = {
-  #
-  #   public = {
-  #     cidr_block = "10.0.0.0/24"
-  #     azs = "us-east-1a"
-  #
-  #   }
-  #   private = {
-  #     cidr_block = "10.0.100.0/24"
-  #     azs = "us-east-1a"
-  #
-  #   }
-  # }
-
+  description = "The configuration for the subnets as map(object) with valid cidr_block and azs"
 
 
   validation {
